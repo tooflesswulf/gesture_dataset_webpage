@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MTurk display</title>
+</head>
+<body>
+
+<!-- Bootstrap v3.0.3 -->
+<!--<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+<section class="container" id="Other" style="margin-bottom:1rem; padding: .66rem .66rem; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+    <!-- Instructions -->
+    <div class="card card-inverse" style="background-color: #333333; border-color: #333333">
+        <div class="card-header"><strong>Instructions</strong></div>
+
+        <div class="card-block">
+            <p class="card-text">Watch the video of the hand motion shown. For every category, check the box if the action described is present at all.
+            Lorem ipsum yada yada.</p>
+        </div>
+    </div>
+    <!-- End Instructions --><!-- Content Body -->
+
+    <div class="card-block">
+        <nav class="nav nav-tabs justify-content-center">
+            <!--<div class="btn-group" data-toggle="buttons">-->
+                <a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. fruit</a>
+                <a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. trees</a>
+                <a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. split view</a>
+            <!--</div>-->
+        </nav>
+    </div>
+
+    <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. Pick these fruit options:
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                    <label class="btn btn-secondary"><input type="checkbox" value="Broccoli"/>Broccoli</label>
+                    <label class="btn btn-secondary"><input type="checkbox" value="Cabbage"/>Cabbage</label>
+                    <label class="btn btn-secondary"><input type="checkbox" value="Daikon Radish"/>Daikon Radish</label>
+                    <label class="btn btn-secondary"><input type="checkbox" value="Fennel"/>Fennel</label>
+                    <label class="btn btn-secondary"><input type="checkbox" value="Hello"/>Hello</label>
+                    <label class="btn btn-secondary"><input type="checkbox" value="Eggplant"/>Eggplant</label>
+                    <label class="btn btn-secondary"><input type="checkbox" value="Ginger"/>Ginger</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        2. Pick these tree species: (for comparison, these are the checkboxes)
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block custom-controls-stacked">
+                    <label><input type="checkbox" value="Pine"/>Pine</label>
+                    <label><input type="checkbox" value="Spruce"/>Spruce</label>
+                    <label><input type="checkbox" value="Douglas Fir"/>Douglas Fir</label>
+                    <label><input type="checkbox" value="Maple"/>Maple</label>
+                    <label><input type="checkbox" value="Ash"/>Ash</label>
+                    <label><input type="checkbox" value="Aspen"/>Aspen</label>
+                    <label><input type="checkbox" value="Birch"/>Birch</label>
+                    <label><input type="checkbox" value="Pine"/>Pine</label>
+                    <label><input type="checkbox" value="Spruce"/>Spruce</label>
+                    <label><input type="checkbox" value="Douglas Fir"/>Douglas Fir</label>
+                    <label><input type="checkbox" value="Maple"/>Maple</label>
+                    <label><input type="checkbox" value="Ash"/>Ash</label>
+                    <label><input type="checkbox" value="Aspen"/>Aspen</label>
+                    <label><input type="checkbox" value="Birch"/>Birch</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        3. Look at this split view! (coming soon i swear)
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block row mt-0">
+                    <div class="card w-50">
+                        <!--<div class="card-header">-->
+                            <!--1. Pick these fruit options:-->
+                        <!--</div>-->
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Left</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Right"/>Right</label>
+                        </div>
+                    </div>
+                    <div class="card w-50">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Right</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" value="Right"/>Right</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Content Body --><!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
+
+
+</body>
+</html>

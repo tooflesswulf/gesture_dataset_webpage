@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MTurk textbox</title>
+</head>
+<body>
+
+<!-- Bootstrap v3.0.3 -->
+<!--<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link href="http://vjs.zencdn.net/6.6.0/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/6.6.0/video.js"></script>
+
+<section class="container" id="Other" style="margin-bottom:1rem; padding: .66rem .66rem; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+    <div class="row">
+        <!-- Video -->
+        <div class="card col-6 my-auto">
+            <div class="card-block">
+                <video class="video-js" controls width="480" height="auto" data-setup="{}">
+                    <source src="${video_url}" type='video/mp4'>
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
+
+                <p>
+                    <a href="${video_url}">Link for if the video does not play.</a>
+                </p>
+            </div>
+        </div>
+        <!-- End of Video -->
+
+        <!-- Instructions -->
+        <div class="col-6">
+            <div class="card card-inverse" style="background-color: #333333; border-color: #333333">
+                <div class="card-header"><strong>Instructions</strong></div>
+
+                <div class="card-block">
+                    <p class="card-text">
+                        Watch the video of the hand motion shown. Describe the motion shown with 3-4 words.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><strong>Please describe the gesture shown.</strong></div>
+                <div class="card-block">
+                    <div class="form-group">
+                        <label class="inputdefault">Descriptor #1</label>
+                        <input class="form-control" name="desc1" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="inputdefault">Descriptor #2</label>
+                        <input class="form-control" name="desc2" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="inputdefault">Descriptor #3</label>
+                        <input class="form-control" name="desc3" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="inputdefault">Descriptor #4</label>
+                        <input class="form-control" name="desc4" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Instructions -->
+    </div>
+
+    <!-- Content Body -->
+
+    <!-- End Content Body -->
+</section>
+<!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
+
+
+</body>
+</html>

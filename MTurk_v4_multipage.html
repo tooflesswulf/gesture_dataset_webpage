@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MTurk display</title>
+</head>
+<body>
+
+<!-- Bootstrap v3.0.3 -->
+<!--<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+<!-- Bootstrap v4.00 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<!-- video-js -->
+<link href="http://vjs.zencdn.net/6.6.0/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/6.6.0/video.js"></script>
+
+<!-- help tips -->
+<link rel="stylesheet" type="text/css" href="help-tips.css">
+
+<style>
+    .row.match-my-cols {
+    overflow: hidden;
+    }
+
+    .row.match-my-cols [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    }
+</style>
+
+<script>
+    function show1() {
+        document.getElementById('Page1').style.display='block';
+        document.getElementById('Page2').style.display='none';
+        document.getElementById('Page3').style.display='none';
+        document.getElementById('t1').classList.add('active');
+        document.getElementById('t2').classList.remove('active');
+        document.getElementById('t3').classList.remove('active');
+    }
+    function show2() {
+        document.getElementById('Page1').style.display='none';
+        document.getElementById('Page2').style.display='block';
+        document.getElementById('Page3').style.display='none';
+        document.getElementById('t1').classList.remove('active');
+        document.getElementById('t2').classList.add('active');
+        document.getElementById('t3').classList.remove('active');
+    }
+    function show3() {
+        document.getElementById('Page1').style.display='none';
+        document.getElementById('Page2').style.display='none';
+        document.getElementById('Page3').style.display='block';
+        document.getElementById('t1').classList.remove('active');
+        document.getElementById('t2').classList.remove('active');
+        document.getElementById('t3').classList.add('active');
+    }
+</script>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a id="t1" class="nav-link active" href="#" onclick="return show1()">Consent Form</a>
+    </li>
+    <li class="nav-item">
+        <a id="t2" class="nav-link" href="#" onclick="return show2()">Task 1</a>
+    </li>
+    <li class="nav-item">
+        <a id="t3" class="nav-link" href="#" onclick="return show3()">Task 2</a>
+    </li>
+</ul>
+
+<div id="Page1">
+    <section class="container" id="page1block" style="margin-bottom:1rem; padding: .66rem .66rem; font-family: Verdana, Geneva, sans-serif; font-size:0.9em;">
+        <div class="row col-8">
+            <div class="card"> <!--style="background-color: #333333; border-color: #333333">-->
+                <div class="card-header"><strong>Consent Form</strong>
+                    <!--<div class="help-tip">-->
+                        <!--<p>-->
+                            <!--<img src="help/circ_help.png"><br>-->
+                            <!--This is the inline help tip! You can explain to your users what this section of your web app is about.</p>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="card-block">
+                    <p class="card-text">
+                        Please view and complete the consent form here:
+                    </p>
+                    <a href="https://purdue.ca1.qualtrics.com/jfe/form/SV_5hFTtVIWAQmWPnT" target="_blank">form link</a>
+                </div>
+                <div class="card-block">
+                    <p class="card-text">Your consent form IDs from previous completions of this task can be reused.</p>
+                    <input type="text" class="form-control" name="desc1" placeholder="Consent form ID">
+                </div>
+                <div class="card-block">
+                    <label class="btn btn-secondary" onclick="return show2()">Next Page</label>
+                    <!--<label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Up"/>Up</label>-->
+
+                    <!--<input type="button" class="btn btn-default"-->
+                            <!--onclick="return show('Page2','Page1');">Next Page</input>-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="Page2" style="display:none">
+<section class="container" id="Other" style="margin-bottom:1rem; padding: .66rem .66rem; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+    <div class="row match-my-cols col-12">
+        <div class="col">
+        <!-- Video -->
+        <div class="card">
+            <div class="card-block">
+                <video class="video-js" controls width="480" height="auto" data-setup="{}">
+                    <source src="${video_url}" type='video/mp4'>
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
+
+                <p>
+                    <a href="${video_url}">Link for if the video does not play.</a>
+                </p>
+            </div>
+        </div>
+        <!-- End of Video -->
+        </div>
+        <div class="col">
+        <!-- Instructions -->
+        <div class="card"><!-- style="background-color: #333333; border-color: #333333">-->
+            <div class="card-header"><strong>Instructions</strong></div>
+
+            <div class="card-block">
+                <p class="card-text">
+                    Watch the video of the hand motion shown. For every category, check the box if the action described is present at all.
+                    Lorem ipsum yada yada.
+                </p>
+            </div>
+        </div>
+        <!-- End Instructions -->
+        </div>
+    </div>
+
+    <!-- Content Body -->
+    <!--<div class="card-block">-->
+        <!--<nav class="nav nav-tabs justify-content-center">-->
+            <!--&lt;!&ndash;<div class="btn-group" data-toggle="buttons">&ndash;&gt;-->
+            <!--<a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Movement</a>-->
+            <!--<a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Pose</a>-->
+            <!--<a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Motion Plane</a>-->
+            <!--<a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Part of Body</a>-->
+            <!--<a class="nav-link btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Position</a>-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</nav>-->
+    <!--</div>-->
+
+    <div id="accordion" role="tablist" aria-multiselectable="true" class="mt-3 col-12">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Hand movement/trajectory
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block row mt-0">
+                    <div class="card col-4">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Left Hand</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Up"/>
+                                Up
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Down"/>
+                                Down
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Left"/>
+                                Left
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Right"/>Right
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Forward"/>Forward
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Backward"/>Backward
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Clockwise"/>Clockwise
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Counter Clockwise"/>Counter Clockwise
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Iterative"/>Iterative
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Circular"/>Circular
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>
+                            </label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_mov" value="Rectangular"/>Rectangular
+                                <div class="help-tip">
+                                    <p><img src="help/circ_help.png"><br>
+                                        Note this motion also fulfills Left, Up, Right, Down, and Clockwise</p>
+                                </div>                            </label>
+                        </div>
+                    </div>
+                    <div class="card col-4">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Right Hand</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Right"/>Right</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Forward"/>Forward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Backward"/>Backward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Clockwise"/>Clockwise</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Counter Clockwise"/>Counter Clockwise</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Iterative"/>Iterative</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Circular"/>Circular</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_mov" value="Rectangular"/>Rectangular</label>
+                        </div>
+                    </div>
+                    <div class="card col-4">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Overall</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Right"/>Right</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Forward"/>Forward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Backward"/>Backward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Clockwise"/>Clockwise</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Counter Clockwise"/>Counter Clockwise</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Iterative"/>Iterative</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Circular"/>Circular</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="ov_mov" value="Rectangular"/>Rectangular</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Hand Orientation/Arm Pose
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block row mt-0">
+                    <div class="card col-3">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Left Hand</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_pose" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_pose" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_pose" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_pose" value="Right"/>Right</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_pose" value="Forward"/>Forward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_pose" value="Backward"/>Backward</label>
+                        </div>
+                    </div>
+                    <div class="card col-3">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Right Hand</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_pose" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_pose" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_pose" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_pose" value="Right"/>Right</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_pose" value="Forward"/>Forward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_pose" value="Backward"/>Backward</label>
+                        </div>
+                    </div>
+                    <div class="card col-3">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Left Arm</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="larm_pose" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="larm_pose" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="larm_pose" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="larm_pose" value="Right"/>Right</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="larm_pose" value="Forward"/>Forward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="larm_pose" value="Backward"/>Backward</label>
+                        </div>
+                    </div>
+                    <div class="card col-3">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Right Arm</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rarm_pose" value="Up"/>Up</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rarm_pose" value="Down"/>Down</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rarm_pose" value="Left"/>Left</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rarm_pose" value="Right"/>Right</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rarm_pose" value="Forward"/>Forward</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rarm_pose" value="Backward"/>Backward</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Hand Motion Plane
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block row mt-0">
+                    <div class="card w-50">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Left hand</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_plane" value="Sagittal"/>Sagittal</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_plane" value="Frontal"/>Frontal</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="lh_plane" value="Transverse"/>Transverse</label>
+                        </div>
+                    </div>
+                    <div class="card w-50">
+                        <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                            <h4 class="card-title">Right hand</h4>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_plane" value="Sagittal"/>Sagittal</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_plane" value="Frontal"/>Frontal</label>
+                            <label class="btn btn-secondary"><input type="checkbox" name="rh_plane" value="Transverse"/>Transverse</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" role="tab" id="headingFour">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Part of Body Referred to
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                    <label class="btn btn-secondary"><input type="checkbox" name="body_part" value="Head"/>Head</label>
+                    <label class="btn btn-secondary"><input type="checkbox" name="body_part" value="Eyes"/>Eyes</label>
+                    <label class="btn btn-secondary"><input type="checkbox" name="body_part" value="Nose"/>Nose</label>
+                    <label class="btn btn-secondary"><input type="checkbox" name="body_part" value="Mouth"/>Mouth</label>
+                    <label class="btn btn-secondary"><input type="checkbox" name="body_part" value="Ear"/>Ear</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" role="tab" id="headingFive">
+                <div class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        General Position of Gesture
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="card-block custom-controls-stacked btn-group" data-toggle="buttons">
+                    <label class="btn btn-secondary"><input type="checkbox" name="pos" value="High"/>Above Head</label>
+                    <label class="btn btn-secondary"><input type="checkbox" name="pos" value="Medium"/>Between Head and Shoulders</label>
+                    <label class="btn btn-secondary"><input type="checkbox" name="pos" value="Low"/>Below Shoulders</label>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="Page3">
+    hi <p>do you hear</p>
+</div>
+</section>
+</div>
+<!-- End Content Body --><!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
+
+
+</body>
+</html>
