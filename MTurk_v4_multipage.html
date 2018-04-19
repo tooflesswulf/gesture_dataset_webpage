@@ -63,7 +63,7 @@
     }
 </script>
 
-<ul class="nav nav-tabs">
+<ul class="sticky-top nav nav-tabs">
     <li class="nav-item">
         <a id="t1" class="nav-link active" href="#" onclick="return show1()">Consent Form</a>
     </li>
@@ -109,39 +109,41 @@
 
 <div id="Page2" style="display:none">
 <section class="container" id="Other" style="margin-bottom:1rem; padding: .66rem .66rem; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
-    <div class="row match-my-cols col-12">
-        <div class="col">
-        <!-- Video -->
-        <div class="card">
-            <div class="card-block">
-                <video class="video-js" controls width="480" height="auto" data-setup="{}">
-                    <source src="${video_url}" type='video/mp4'>
-                    <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and consider upgrading to a web browser that
-                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    <div class="sticky-top">
+        <div class=" row col-12">
+            <div class="col">
+            <!-- Video -->
+            <div class="card">
+                <div class="card-block">
+                    <video class="video-js" controls width="480" height="auto" data-setup="{}">
+                        <source src="${video_url}" type='video/mp4'>
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a web browser that
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                    </video>
+
+                    <p>
+                        <a href="${video_url}">Link for if the video does not play.</a>
                     </p>
-                </video>
-
-                <p>
-                    <a href="${video_url}">Link for if the video does not play.</a>
-                </p>
+                </div>
             </div>
-        </div>
-        <!-- End of Video -->
-        </div>
-        <div class="col">
-        <!-- Instructions -->
-        <div class="card"><!-- style="background-color: #333333; border-color: #333333">-->
-            <div class="card-header"><strong>Instructions</strong></div>
-
-            <div class="card-block">
-                <p class="card-text">
-                    Watch the video of the hand motion shown. For every category, check the box if the action described is present at all.
-                    Lorem ipsum yada yada.
-                </p>
+            <!-- End of Video -->
             </div>
-        </div>
-        <!-- End Instructions -->
+            <div class="col">
+            <!-- Instructions -->
+            <div class="card"><!-- style="background-color: #333333; border-color: #333333">-->
+                <div class="card-header"><strong>Instructions</strong></div>
+
+                <div class="card-block">
+                    <p class="card-text">
+                        Watch the video of the hand motion shown. For every category, check the box if the action described is present at all.
+                        Lorem ipsum yada yada.
+                    </p>
+                </div>
+            </div>
+            <!-- End Instructions -->
+            </div>
         </div>
     </div>
 
